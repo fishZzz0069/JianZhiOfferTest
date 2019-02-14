@@ -86,6 +86,53 @@ public class Solution32 {
     }
 
 
+    public ArrayList<ArrayList<Integer> > ZPrint(TreeNode pRoot) {
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+        Stack<TreeNode> stack1 = new Stack<>();
+        Stack<TreeNode> stack2 = new Stack<>();
+        if (pRoot == null){
+            return res;
+        }
+
+        stack1.push(pRoot);
+        while (!stack1.isEmpty()||!stack2.isEmpty()){
+            ArrayList<Integer> templist = new ArrayList<>();
+            if (stack1.isEmpty()){
+                while (!stack2.isEmpty()){
+                    TreeNode temp = stack2.pop();
+                    templist.add(temp.val);
+                    if (temp.right!=null){
+                        stack1.push(temp.right);
+                    }
+                    if (temp.left!=null){
+                        stack1.push(temp.left);
+                    }
+                }
+                res.add(new ArrayList<>(templist));
+
+
+
+            }else {
+                while (!stack1.isEmpty()){
+                    TreeNode temp = stack1.pop();
+                    templist.add(temp.val);
+                    if (temp.left!=null){
+                        stack2.push(temp.left);
+                    }
+                    if (temp.right!=null){
+                        stack2.push(temp.right);
+                    }
+                }
+
+                res.add(new ArrayList<>(templist));
+
+            }
+
+        }
+        return res;
+    }
+
+
     public static void main(String[] args){
         TreeNode t1= new TreeNode(10);
         t1.left = new TreeNode(6);
