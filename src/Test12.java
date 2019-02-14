@@ -26,7 +26,7 @@ public class Test12 {
          visited[i*cols+j] = true;
          if (helper(martrix,rows,cols,index+1,i+1,j,str,visited)
                  ||helper(martrix,rows,cols,index+1,i,j+1,str,visited)
-                 ||helper(martrix,rows,cols,index+1,i-1,j+1,str,visited)
+                 ||helper(martrix,rows,cols,index+1,i-1,j,str,visited)
                  ||helper(martrix,rows,cols,index+1,i,j-1,str,visited)){
              return true;
          }
@@ -38,9 +38,9 @@ public class Test12 {
     }
 
     public static void main(String[] args){
-         char[] test = new char[]{'a','b','c','d'};
-         char[] testStr = new char[]{'a','c'};
-         System.out.print(new Test12().hasPath(test,2,2,testStr));
+         char[] test = new char[]{'A','B','C','E','S','F','C','S','A','D','E','E'};
+         char[] testStr = new char[]{'A','B','C','C','E','D'};
+         System.out.print(new Test12().hasPath(test,3,4,testStr));
 
     }
 

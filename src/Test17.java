@@ -24,6 +24,7 @@ public class Test17 {
 
     }
 
+    int count = 0;
     private void printNumber(char[] number) {
         boolean isBegin = false;
         for (int i = 0 ; i < number.length ; i++){
@@ -31,7 +32,11 @@ public class Test17 {
                 isBegin = true;
             }
             if (isBegin){
+                if (number[i] == '1'){
+                    count++;
+                }
                 System.out.print(number[i]);
+
             }
 
 

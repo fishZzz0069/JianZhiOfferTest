@@ -13,7 +13,7 @@ public class Test14 {
         product[0] = 0;
         product[1] = 1;
         product[2] = 2;
-        product[3] = 2;
+        product[3] = 3;
 
 
         for (int i = 4 ; i <= n ; i++){
@@ -38,7 +38,7 @@ public class Test14 {
     }
 
     public static void main(String[] args){
-        System.out.print(new Test14().getMax(5));
+        System.out.print(new Test14().getMax(8));
     }
 
 

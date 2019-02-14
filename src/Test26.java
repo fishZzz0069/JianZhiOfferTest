@@ -17,7 +17,7 @@ public class Test26 {
             return t == null;
         }
         if (t == null){
-            return false;
+            return true;
         }
 
         if (s.val != t.val){
@@ -35,16 +35,17 @@ public class Test26 {
   }
 
   public static void main(String[] args){
-        TreeNode t1= new TreeNode(3);
-        t1.left = new TreeNode(4);
-        t1.right = new TreeNode(5);
+        TreeNode t1= new TreeNode(8);
+        t1.left = new TreeNode(8);
+        t1.right = new TreeNode(7);
 
-       t1.left.left = new TreeNode(1);
+       t1.left.left = new TreeNode(9);
        t1.left.right = new TreeNode(2);
-      t1.left.left.left = new TreeNode(0);
+      t1.left.left.left = new TreeNode(4);
+      t1.left.left.right = new TreeNode(7);
 
-      TreeNode t2= new TreeNode(4);
-      t2.left = new TreeNode(1);
+      TreeNode t2= new TreeNode(8);
+      t2.left = new TreeNode(9);
       t2.right = new TreeNode(2);
       //t2.left.left = new TreeNode(1);
         System.out.println(new Test26().isSubtree(t1,t2));

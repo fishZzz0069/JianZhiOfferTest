@@ -10,6 +10,8 @@ public class Test18 {
     }
 
 
+
+
     public void deleteNode(ListNode head,ListNode deListNode){
         if(deListNode == null || head == null){
             return ;
